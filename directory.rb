@@ -1,16 +1,26 @@
-# First, we put the list of students into an array of hashes
-students = [
-{name: "Dr Hannibal Lecter", cohort: :november},
-{name: "Darth Vader", cohort: :november},
-{name: "Nurse Ratched", cohort: :november},
-{name: "Micheal Corleone", cohort: :november},
-{name: "Alex DeLarge", cohort: :november},
-{name: "The Wicked Witch of the West", cohort: :november},
-{name: "Terminator", cohort: :november},
-{name: "Freddy Krueger", cohort: :november},
-{name: "The Joker", cohort: :november},
-{name: "Joffrey Baratheon", cohort: :november},
-{name: "Norman Bates", cohort: :november} ]
+# Create method which asks user to input student names
+def input_students
+  puts "Please enter the names of the students"
+  puts "To finish, just hit return twice"
+
+  # Create an empty array to store our future students
+  students = []
+
+  # Get the first name
+  name = gets.chomp
+
+  # While the name is not empty, repeat this code
+  while !name.empty? do
+    # Add the student hash to the array. << is the shovel operator, which puts things into an array
+    students << {name: name, cohort: :november}
+    puts "Now we have #{students.count} students"
+    # Get another name from the user
+    name = gets.chomp
+  end
+  # Return the array of students
+  students
+end
+
 # Create a method for the header
 def print_header
   puts "The students of Villain Academy"
@@ -30,6 +40,7 @@ def print_footer(names)
 end
 
 # Run methods, its print(students) as it will be printing the students array
+students = input_students
 print_header
 print(students)
 print_footer(students)
