@@ -11,10 +11,25 @@ students = [
 "The Joker",
 "Joffrey Baratheon",
 "Norman Bates" ]
-puts "The students of Villain Academy"
-puts "-----------------"
-# Iterate over array of students
-students.each do |student|
-  puts student
+# Create a method for the header
+def print_header
+  puts "The students of Villain Academy"
+  puts "-----------------"
 end
-puts "Overall, we have #{students.count} great students"
+
+# Create method to iterate over array of students
+def print(names)
+  names.each do |name|
+    puts name
+  end
+end
+
+# Create method to print footer
+def print_footer(names)
+  puts "Overall, we have #{names.count} great students"
+end
+
+# Run methods, its print(students) as it will be printing the students array
+print_header
+print(students)
+print_footer(students)
