@@ -28,11 +28,12 @@ def print_header
 end
 
 # Create method to iterate over array of students. Student info now in a hash, so use key symbols within array [].
-# student[:name].length name symbol is needed as method needs to know that it is an array or hash, not a string. It iterates over the name symbol.
-# only prints if student name less than 12 letter using length method
+# Used while loop here, while input is true, perform the each method below
 def print(students)
-  students.each.with_index(1) do |student, index|
-    puts "#{index}. #{student[:name]} (#{student[:cohort]} cohort)" if student[:name].length <= 12
+  while students == true
+    students.each do |student, index|
+      puts "#{student[:name]} (#{student[:cohort]} cohort)"
+    end
   end
 end
 
