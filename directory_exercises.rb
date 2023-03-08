@@ -33,8 +33,8 @@ end
 
 # Create method to iterate over array of students. Student info now in a hash, so use key symbols within array [].
 def print(students)
-  students.each do |student, cohort|
-    puts "#{student[:name]} (#{student[:cohort]}) cohort"
+  students.filter_map do |student|
+    puts "#{student[:name]}, #{student[:cohort]} cohort" if student[:cohort] == "march"
   end
 end
 
