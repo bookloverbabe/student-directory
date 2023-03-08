@@ -12,7 +12,7 @@ def input_students
   # While the name is not empty, repeat this code
   while !name.empty? do
     # Add the student hash to the array. << is the shovel operator, which puts things into an array
-    students << {name: name, cohort: :november, birthday: :dob}
+    students << {name: name, cohort: :november}
     puts "Now we have #{students.count} students"
     # Get another name from the user
     name = gets.chomp
@@ -30,7 +30,7 @@ end
 # Create method to iterate over array of students. Student info now in a hash, so use key symbols within array [].
 def print(students)
   students.each do |student|
-    puts "#{student[:name]} (#{student[:cohort]}) cohort and their date of birth is #{student[:birthday]}"
+    puts "#{student[:name]} (#{student[:cohort]}) cohort".center(50, " ")
   end
 end
 
