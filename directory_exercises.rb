@@ -28,9 +28,10 @@ def print_header
 end
 
 # Create method to iterate over array of students. Student info now in a hash, so use key symbols within array [].
+# student[:name].start_with?("a") name symbol is needed as method needs to know that it is an array or hash, not a string. It iterates over the name symbol.
 def print(students)
   students.each.with_index(1) do |student, index|
-    puts "#{index}. #{student[:name]} (#{student[:cohort]} cohort)"
+    puts "#{index}. #{student[:name]} (#{student[:cohort]} cohort)" if student[:name].start_with?("a")
   end
 end
 
