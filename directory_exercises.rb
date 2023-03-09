@@ -12,8 +12,8 @@ def input_students
   cohort = []
 
   # Get the first name
-  name = gets.chomp
-  cohort = gets.chomp
+  name = gets.strip
+  cohort = gets.strip
 
   # While the name is not empty, repeat this code
   while !name.empty? do
@@ -26,8 +26,8 @@ def input_students
     end
 
     # Get another name from the user
-    name = gets.chomp
-    cohort = gets.chomp
+    name = gets.strip
+    cohort = gets.strip
   end
   # Return the array of students
   students
