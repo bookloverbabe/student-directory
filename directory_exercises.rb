@@ -1,3 +1,6 @@
+require "rubygems"
+require "active_support/inflector"
+
 # Create method which asks user to input student names
 def input_students
   puts "Please enter the names of the students"
@@ -16,7 +19,8 @@ def input_students
   while !name.empty? do
     # Add the student hash to the array. << is the shovel operator, which puts things into an array
     students << {name: name, cohort: cohort}
-    puts "Now we have #{students.count} students"
+    puts "Now we have #{students.count} " + "student" if students.count == 1
+
     # Get another name from the user
     name = gets.chomp
     cohort = gets.chomp
@@ -34,7 +38,7 @@ end
 # Create method to iterate over array of students. Student info now in a hash, so use key symbols within array [].
 def print(students)
   students.filter_map do |student|
-    puts "#{student[:name]}, #{student[:cohort]} cohort" if student[:cohort] == "march"
+    puts "#{student[:name]}, #{student[:cohort]} cohort" # if student[:cohort] == "march"
   end
 end
 
