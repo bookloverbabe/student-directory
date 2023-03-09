@@ -19,7 +19,11 @@ def input_students
   while !name.empty? do
     # Add the student hash to the array. << is the shovel operator, which puts things into an array
     students << {name: name, cohort: cohort}
-    puts "Now we have #{students.count} " + "student" if students.count == 1
+    if students.count == 1
+      puts "Now we have #{students.count} student"   
+    else
+      puts "Now we have #{students.count} students" 
+    end
 
     # Get another name from the user
     name = gets.chomp
