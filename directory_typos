@@ -1,0 +1,48 @@
+def input_students
+  puts "Please enter the names of the students"
+  puts "To finish, just hit return twice"
+  # Create an empty array, array uses square brackets, not curly!
+  students = []
+  # Get the first name. Remove the extra space after gets
+  name = gets.chomp
+  # While the name is not empty, repeat this code. Forgot ! to change to not empty. Change when to while. Add ? after empty
+  while !name.empty? do
+  # Add the student hash to the array. Remove extra colon after cohort and before november. Double arrows as it is a shovel operator
+  # Colon comes after name and cohort as the colon symbols act as hash rockets in the key value pair, where the value is a symbol
+  students << {name: name, cohort: :november}
+  # Students count as method name is a plural
+  puts "Now we have #{students.count} students"
+  # Get another name from the user. gets, not get
+  name = gets.chomp
+  end
+  # return the array of students
+  students
+end
+
+# Change hyphen in print-header to _
+def print_header
+  # Change put below to puts. Change single quotation and `` to double quotation marks
+  puts "The students of my cohort at Makers Academy"
+  puts "-------------"
+end
+
+# Change /student/ to |
+def print(students)
+  students.each do |student|
+    # Change single quoation marks to double. Brackets after # should be curly brackets, not square, and array variables should be in square brackets
+    puts "#{student[:name]} (#{student[:cohort]} cohort)"
+  end
+end
+
+# Names argument should be in round brackets
+def print_footer(names)
+  # Hash before input names.count as it is string interpolation. Change prints to puts
+  puts "Overall, we have #{names.count} great students"
+end
+
+# Change hyphen in input-students to _
+students = input_students
+print_header
+# students should be in round brackets as it is an argument
+print(students)
+print_footer(students)
