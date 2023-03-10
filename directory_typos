@@ -28,9 +28,12 @@ end
 
 # Change /student/ to |
 def print(students)
-  students.each do |student|
+  # Add if else loop to check to user input, if user doesn't add a student name, it will not print an empty list
+  if students.include?(input_students)
+    students.each do |student|
     # Change single quoation marks to double. Brackets after # should be curly brackets, not square, and array variables should be in square brackets
-    puts "#{student[:name]} (#{student[:cohort]} cohort)"
+      puts "#{student[:name]} (#{student[:cohort]} cohort)" 
+    end
   end
 end
 
